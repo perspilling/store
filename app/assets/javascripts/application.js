@@ -24,23 +24,13 @@ jQuery.fn.submitWithAjax = function() {
 };
 
 $(document).ready(function() {
-    $('a.popup_dialog').click(function() {
-        $("#dialog").dialog();
-    });
-
     var form = $("#new_review_form");
 
     $('a.new_review_popup').click(function() {
-        $("#new_review_form").dialog({
+        form.dialog({
             modal: true,
             title: 'Submit a review',
-            width: 460,
-            buttons: {
-                "Submit": function() {
-                    form.submitWithAjax();
-                    $(this).dialog("close");
-                }
-            }
+            width: 'auto'
         });
     });
     //$("#new_review_popup").submitWithAjax();  // works - why?
