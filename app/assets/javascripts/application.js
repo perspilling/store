@@ -28,24 +28,23 @@ $(document).ready(function() {
         $("#dialog").dialog();
     });
 
+    var form = $("#new_review_form");
+
     $('a.new_review_popup').click(function() {
-        $("#new_review").dialog({
+        $("#new_review_form").dialog({
             modal: true,
-            show: 'fade_in',
-            hide: 'slide',
             title: 'Submit a review',
             width: 460,
             buttons: {
                 "Submit": function() {
-                    $(".new_review").submitWithAjax();
-                    $(this).dialog("close");
-                },
-                "Cancel": function() {
+                    form.submitWithAjax();
                     $(this).dialog("close");
                 }
             }
         });
     });
-    $("#new_review_popup").submitWithAjax();
+    //$("#new_review_popup").submitWithAjax();  // works - why?
+    //form.submitWithAjax();  // doesn't work - why?
+    $('a.new_review_popup').submitWithAjax(); // works - hmm
 });
 
