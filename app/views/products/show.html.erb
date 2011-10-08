@@ -46,8 +46,31 @@
 
 <a href="#" class="new_review_popup">Add a review</a>
 
-<div id="hidden_review_form" style="display: none">
-  <%= form_for([@product, @product.reviews.build], :html => {:id => "new_review_form"}) do |f| %>
+<div id="review-dialog-form" style="display: none" title="Add a review">
+  <p>review-dialog-form</p>
+
+  <form>
+    <fieldset>
+      <div class="field">
+        <label for="name">Name</label>
+        <br/>
+        <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all"/>
+      </div>
+      <div class="field">
+        <label for="content">Content</label>
+        <br/>
+        <input type="text" name="content" id="content" value="" class="text ui-widget-content ui-corner-all"/>
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+<hr>
+
+<div id="review-dialog-form2" style="display: none" title="Add a review (2)">
+  <p>review-dialog-form2</p>
+
+  <%= form_for([@product, @product.reviews.build], :html => {:id => "new-review-form"}) do |f| %>
       <div class="field">
         <%= f.label :name %>
         <br/>
@@ -69,3 +92,43 @@
 <div id="reviews">
   <%= render :partial => @product.reviews %>
 </div>
+
+<hr>
+
+<div id="dialog-form" style="display: none" title="Create new user">
+  <p class="validateTips">All form fields are required.</p>
+
+  <form>
+    <fieldset>
+      <label for="name">Name</label>
+      <input type="text" name="name" id="user-name" class="text ui-widget-content ui-corner-all"/>
+      <label for="email">Email</label>
+      <input type="text" name="email" id="user-email" value="" class="text ui-widget-content ui-corner-all"/>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="user-password" value="" class="text ui-widget-content ui-corner-all"/>
+    </fieldset>
+  </form>
+</div>
+
+<div id="users-contain" class="ui-widget">
+  <h1>Existing Users:</h1>
+  <table id="users" class="ui-widget ui-widget-content">
+    <thead>
+    <tr class="ui-widget-header ">
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>John Doe</td>
+      <td>john.doe@example.com</td>
+      <td>johndoe1</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<button id="create-user">Create new user</button>
+
+

@@ -1,4 +1,10 @@
 Store::Application.routes.draw do
+  get "comment/show"
+
+  get "dialog/index"
+
+  get "dialog/show"
+
   resources :products do
     resources :reviews
   end

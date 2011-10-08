@@ -16,25 +16,11 @@ jQuery.ajaxSetup({
 })
 
 jQuery.fn.submitWithAjax = function() {
+    console.log(this);
     this.submit(function() {
         $.post(this.action, $(this).serialize(), null, "script");
         return false;
     })
     return this;
 };
-
-$(document).ready(function() {
-    var form = $("#new_review_form");
-
-    $('a.new_review_popup').click(function() {
-        form.dialog({
-            modal: true,
-            title: 'Submit a review',
-            width: 'auto'
-        });
-    });
-    //$("#new_review_popup").submitWithAjax();  // works - why?
-    //form.submitWithAjax();  // doesn't work - why?
-    $('a.new_review_popup').submitWithAjax(); // works - hmm
-});
 
