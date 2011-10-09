@@ -161,6 +161,12 @@ div#users-contain table {
     width: 100%;
 }
 
+div#comment-dialog-form tr {
+    margin: 1em 0;
+    border: 1px solid #eee;
+    width: 100%;
+}
+
 div#users-contain table td, div#users-contain table th {
     border: 1px solid #eee;
     padding: .6em 10px;

@@ -1,9 +1,24 @@
 $(document).ready(function() {
 
+    $('.comment-details').hide();
+
+    $('.comment-name label').click(function() {
+        $(this).parent().next().toggle('fast');
+    });
+
+    /*$('.comment-name').toggle(
+        function() {
+            $(this).next().show('fast');
+        },
+        function() {
+            $(this).next().hide('fast');
+        }
+    );*/
+
     $("#comment-dialog-form").dialog({
         autoOpen: false,
         height: 'auto',
-        width: 350,
+        width: 'auto',
         modal: true,
         buttons: {
             "Legg til valgt kommentar": function() {
