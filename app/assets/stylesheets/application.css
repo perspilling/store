@@ -167,6 +167,17 @@ div#users-contain table td, div#users-contain table th {
     text-align: left;
 }
 
+div#comments {
+    width: 350px;
+    margin: 20px 0;
+}
+
+div#comments table {
+    margin: 1em 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
 .ui-dialog .ui-state-error {
     padding: .3em;
     background: #6495ed;
