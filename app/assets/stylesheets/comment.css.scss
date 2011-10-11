@@ -1,3 +1,67 @@
 // Place all the styles related to the comment controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@mixin comment-list-color {
+    background: -webkit-gradient(linear, left bottom, left top, from(#a48d6a), to(#dac9af));
+    background: -moz-linear-gradient(bottom,  #a48d6a,  #dac9af);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a48d6a', endColorstr='#dac9af');
+}
+
+@mixin comment-list-padding {
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-right:5px;
+    padding-left:5px;
+}
+
+.comment-panel {
+    height: 400;
+}
+
+.comment-list-panel {
+    background: darken(white, 10%);
+    border: 1px solid black;
+    display:inline-block;
+    vertical-align: top;
+    height: 300px;
+    width: 300px;
+    overflow:scroll;
+    overflow-x:hidden;
+}
+
+.comment-list-item {
+    border: 1px solid #a48d6a;
+    @include comment-list-padding;
+    @include comment-list-color;
+}
+
+.comment-category-title {
+    background: white;
+    @include comment-list-padding;
+}
+
+.right-arrow {
+    padding-left:5px;
+    float: right;
+}
+
+.left-arrow {
+    padding-right:5px;
+    float: left;
+}
+
+#comment-dialog-form {
+    ul { list-style-type: none; }
+    li {
+        margin: 1em 0;
+        border: 1px solid #eee;
+        width: 100%;
+    }
+}
+
+.selected-comments {
+    width: 350px;
+    height: 200px;
+}
