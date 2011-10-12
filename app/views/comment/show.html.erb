@@ -1,27 +1,35 @@
-<h1>Comment#show</h1>
+<h1>Example of a fancy dialog for selecting multiple (key,val) items from a list</h1>
+
 <p># ac.comments = <%= @comment_categories[0].comments.length %> # mc.comments = <%= @comment_categories[1].comments.length %></p>
 
 <div id="comment-dialog-form" title="Legg til en kommentar">
   <span class="comment-panel">
-    <div class="comment-list-panel">
+    <div class="comment-list-panel-frame">
+      <div class="comment-list-title">Standardkommentarer</div>
+      <div class="comment-list-panel">
 
-      <% @comment_categories.each do |cat| %>
-          <div class="comment-category">
-            <div class="comment-category-title"><%= cat.name %></div>
-            <% cat.comments.each do |c| %>
-                <div class="comment-list-item">
-                  <span class="comment-name"><%= c.name %></span>
-                  <span class="right-arrow">&#x25B6;</span>
+        <% @comment_categories.each do |cat| %>
+            <div class="comment-category">
+              <div class="comment-category-title"><%= cat.name %></div>
+              <% cat.comments.each do |c| %>
+                  <div class="comment-list-item">
+                    <span class="comment-name"><%= c.name %></span>
+                    <span class="right-arrow">&#x25B6;</span>
 
-                  <div class="comment-content" style="display: none;"><%= c.content %></div>
-                </div>
-            <% end %>
-          </div>
-      <% end %>
+                    <div class="comment-content" style="display: none;"><%= c.content %></div>
+                  </div>
+              <% end %>
+            </div>
+        <% end %>
 
+      </div>
     </div>
 
-    <div class="selected-comment-list comment-list-panel">
+
+    <div class="comment-list-panel-frame">
+      <div class="comment-list-title">Vises på rapporten</div>
+      <div class="selected-comment-list comment-list-panel">
+      </div>
     </div>
 
   </span>
@@ -44,71 +52,83 @@
 <br/>
 
 
+<div>
 <span class="comment-panel">
-  <div class="comment-list-panel">
-    <div class="comment-category">
+    <div class="comment-list-panel-frame">
+      <div class="comment-list-title">Standardkommentarer</div>
+      <div class="comment-list-panel">
+        <div class="comment-category">
 
-      <div class="comment-category-title">Anmerkninger</div>
-      <div class="comment-list-item">
-        <span class="comment-name">Kommentar1</span>
-        <span class="right-arrow">&#x25B6;</span>
-      </div>
-      <div class="comment-list-item">
-        <span class="comment-name">Kommentar2</span>
-        <span class="right-arrow">&#x25B6;</span>
-      </div>
-      <div class="comment-list-item">
-        <span class="comment-name">Kommentar3</span>
-        <span class="right-arrow">&#x25B6;</span>
-      </div>
-      <div class="comment-list-item">
-        <span class="comment-name">Kommentar3</span>
-        <span class="right-arrow">&#x25B6;</span>
-      </div>
-      <div class="comment-list-item">
-        <span class="comment-name">Kommentar3</span>
-        <span class="right-arrow">&#x25B6;</span>
+          <div class="comment-category-title">Anmerkninger</div>
+          <div class="comment-list-item">
+            <span class="comment-name">Kommentar1</span>
+            <span class="right-arrow">&#x25B6;</span>
+          </div>
+          <div class="comment-list-item">
+            <span class="comment-name">Kommentar2</span>
+            <span class="right-arrow">&#x25B6;</span>
+          </div>
+          <div class="comment-list-item">
+            <span class="comment-name">Kommentar3</span>
+            <span class="right-arrow">&#x25B6;</span>
+          </div>
+          <div class="comment-list-item">
+            <span class="comment-name">Kommentar3</span>
+            <span class="right-arrow">&#x25B6;</span>
+          </div>
+          <div class="comment-list-item">
+            <span class="comment-name">Kommentar3</span>
+            <span class="right-arrow">&#x25B6;</span>
+          </div>
+        </div>
+
+        <div class="comment-category">
+
+          <div class="comment-category-title">Mangler</div>
+          <div class="comment-list-item">
+            <span class="comment-name">Kommentar3</span>
+            <span class="right-arrow">&#x25B6;</span>
+          </div>
+          <div class="comment-list-item">
+            <span class="comment-name">Kommentar3</span>
+            <span class="right-arrow">&#x25B6;</span>
+          </div>
+          <div class="comment-list-item">
+            <span class="comment-name">Kommentar3</span>
+            <span class="right-arrow">&#x25B6;</span>
+          </div>
+          <div class="comment-list-item">
+            <span class="comment-name">Kommentar3</span>
+            <span class="right-arrow">&#x25B6;</span>
+          </div>
+          <div class="comment-list-item">
+            <span class="comment-name">Kommentar3</span>
+            <span class="right-arrow">&#x25B6;</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="comment-category">
 
-      <div class="comment-category-title">Mangler</div>
-      <div class="comment-list-item">
-        <span class="comment-name">Kommentar3</span>
-        <span class="right-arrow">&#x25B6;</span>
-      </div>
-      <div class="comment-list-item">
-        <span class="comment-name">Kommentar3</span>
-        <span class="right-arrow">&#x25B6;</span>
-      </div>
-      <div class="comment-list-item">
-        <span class="comment-name">Kommentar3</span>
-        <span class="right-arrow">&#x25B6;</span>
-      </div>
-      <div class="comment-list-item">
-        <span class="comment-name">Kommentar3</span>
-        <span class="right-arrow">&#x25B6;</span>
-      </div>
-      <div class="comment-list-item">
-        <span class="comment-name">Kommentar3</span>
-        <span class="right-arrow">&#x25B6;</span>
-      </div>
-    </div>
-
-  </div>
-  <div class="comment-list-panel">
-    <div class="comment-list-item">
-      <span class="left-arrow">&#x25C0;</span>
+    <div class="comment-list-panel-frame">
+      <div class="comment-list-title">Vises på rapporten</div>
+      <div class="comment-list-panel">
+        <div class="comment-list-item">
+          <span class="left-arrow">&#x25C0;</span>
       <span class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
       ut labore et dolore magna aliqua.
       </span>
-    </div>
-    <div class="comment-list-item">
-      <span class="left-arrow">&#x25C0;</span>
+        </div>
+        <div class="comment-list-item">
+          <span class="left-arrow">&#x25C0;</span>
       <span class="comment-text">Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque.
       Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros.
       </span>
+        </div>
+      </div>
     </div>
-  </div>
+
 </span>
+
+</div>

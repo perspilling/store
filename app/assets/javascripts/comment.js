@@ -1,16 +1,20 @@
 $(document).ready(function() {
 
-    $('.comment-list-item').click(function() {
+    $("#comment-dialog-form").delegate('.comment-list-item', 'click', function() {
         var commentName = $(this).children(".comment-name").text();
         var commentContent = $(this).children(".comment-content").text();
 
-        var selectedCommentHtml =
-            "<div class=\"comment-list-item\">" +
-            "<span class=\"comment-name\" style=\"display: none;\">" + commentName + "</span>" +
-            "<span class=\"left-arrow\">&#x25C0;</span>" +
-            "<span class=\"comment-text\">" + commentContent + "</span>" +
-            "</div>";
-        $(".selected-comment-list").append(selectedCommentHtml);
+        if ($(this).parent().hasClass("selected-comment-list")) {
+            $(this).remove()
+        } else {
+            var selectedCommentHtml =
+                "<div class=\"comment-list-item\">" +
+                    "<span class=\"comment-name\" style=\"display: none;\">" + commentName + "</span>" +
+                    "<span class=\"left-arrow\">&#x25C0;</span>" +
+                    "<span class=\"comment-text\">" + commentContent + "</span>" +
+                    "</div>";
+            $(".selected-comment-list").append(selectedCommentHtml);
+        }
     });
 
     $("#comment-dialog-form").dialog({
@@ -26,11 +30,11 @@ $(document).ready(function() {
                 var scTexts = [];
                 if (selectedCommentNameList.length != 0) {
                     /*
-                    for (i = 0; i < selectedCommentNameList.length; i++) {
-                        scNames[i] = selectedCommentNameList[i].innerText;
-                        scTexts[i] = selectedCommentTextList[i].innerText;
-                    }
-                    */
+                     for (i = 0; i < selectedCommentNameList.length; i++) {
+                     scNames[i] = selectedCommentNameList[i].innerText;
+                     scTexts[i] = selectedCommentTextList[i].innerText;
+                     }
+                     */
                     selectedCommentNameList.each(function(i) {
                         scNames[i] = $(this).text();
                     });

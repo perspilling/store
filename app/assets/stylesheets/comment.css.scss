@@ -18,6 +18,15 @@
 
 .comment-panel {
     height: 400;
+    display: inline;
+}
+
+.comment-list-panel-frame {
+    display:inline-block;
+}
+
+.comment-list-title {
+    font-weight: bold;
 }
 
 .comment-list-panel {
